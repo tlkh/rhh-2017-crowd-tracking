@@ -1,9 +1,7 @@
 import numpy as np
 import cv2
 import time
-import imutils
 from collections import deque
-import sys, traceback
 import paho.mqtt.client as mqttClient
 
 cv2.setUseOptimized(True)

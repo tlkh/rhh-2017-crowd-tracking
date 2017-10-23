@@ -1,5 +1,5 @@
-import numpy as np
-import numpy.random
+# generates a heatmap from coordinates logged in a text file
+
 import matplotlib.pyplot as plt
 
 '''# Generate some test data
