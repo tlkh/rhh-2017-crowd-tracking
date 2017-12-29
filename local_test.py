@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 import time
+import sys
 from collections import deque
 
 cv2.setUseOptimized(True)
@@ -86,13 +87,13 @@ while(cap.isOpened()):
                 else:
                     lastobject = False
 
-                if (12 < radius < 300):
+                if (13 < radius < 300):
                     c_i+=1
                     try:
                         print("processing track" + str(c_i) + ": " + str(globals()['pts%s' % c_i]))
                     except Exception as e:
-                        globals()['pts%s' % c_i] = deque(maxlen=8)
-                        globals()['time%s' % c_i] = deque(maxlen=8)
+                        globals()['pts%s' % c_i] = deque(maxlen=16)
+                        globals()['time%s' % c_i] = deque(maxlen=16)
 
                     cv2.drawContours(frame, c, -1, (0,255,0), 2)
                     print("number of circles: " + str(c_i))
@@ -188,7 +189,7 @@ while(cap.isOpened()):
 
                             # otherwise, compute the thickness of the line and
                             # draw the connecting lines
-                            thickness = int(1)
+                            thickness = int(3)
                             cv2.line(frame, globals()['pts%s' % c_i][i - 1], globals()['pts%s' % c_i][i], (0, 0, 255), thickness)
                             if i == c_i:
                                 dwell = globals()['time%s' % c_i]
