@@ -15,3 +15,5 @@ Other bits:
 - heatmap.py: generate a heatmap from a log file generated for any of the above
 - app.py: web interface, doesn't quite work
 - MicOutSerial: Arduino code to upload noise data over MQTT
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
